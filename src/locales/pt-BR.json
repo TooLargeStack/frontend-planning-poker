@@ -1,0 +1,11 @@
+{
+	"translation": {
+		"Welcome to React": "Bem Vindo",
+		"labels": {
+			"enterName": "Informe seu nome"
+		},
+		"buttons": {
+			"confirm": "Confirmar"
+		}
+	}
+}
