@@ -4,52 +4,42 @@ import { FormControl, Text, Button, Input, Stack } from "@chakra-ui/react"
 import { motion } from 'framer-motion';
 
 
-import {io} from "socket.io-client"
+export const PresentationForm = (props: any) => {
+	const [user, setUser] = React.useState('')
 
-
-io('http://localhost:5000', {
-  withCredentials: true,
-  transports: ["websocket", "polling"]
-});
-
-export class PresentationForm extends React.Component {
-	constructor(props: any) {
-		super(props)
-		this.state = {
-			username: ""
-		}
+	function handleUsernameChange(event: any) {
+		setUser(event.target.value)
 	}
 
-	handleUsernameChange =(event: any) => {
-		this.setState({username: event.target.value})
+	function setUsername() {
+		props.onChange(user)
+		localStorage.setItem('username', user)
 	}
 
-	render() {
-		return (
-			<FormControl>
-				<Text>
-					{ t('labels.enterName') }
-				</Text>
-				<Stack direction='row' spacing={2}>
-					<Input
-						type="text"
-						placeholder="Username"
-						name="username"
-						onChange={this.handleUsernameChange} 
-					/>
-					<Button
-						as={motion.button}
-						size="md"
-						color="#fff"
-						bg=" #FF0080"
-						colorScheme="pink"
-						variant="solid"
-					>
-						Enter
-					</Button>
-				</Stack>
-			</FormControl>
-		)
-	}
-
+	return (
+		<FormControl>
+			<Text>
+				{ t('labels.enterName') }
+			</Text>
+			<Stack direction='row' spacing={2}>
+				<Input
+					type="text"
+					placeholder="Username"
+					name="username"
+					onChange={(e) => handleUsernameChange(e)} 
+				/>
+				<Button
+					as={motion.button}
+					size="md"
+					color="#fff"
+					bg=" #FF0080"
+					colorScheme="pink"
+					variant="solid"
+					onClick={setUsername}
+				>
+					Enter
+				</Button>
+			</Stack>
+		</FormControl>
+	)
 }
