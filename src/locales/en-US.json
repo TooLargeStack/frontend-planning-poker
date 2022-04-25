@@ -1,0 +1,12 @@
+{
+	"translation": {
+		"greetings": "Welcome",
+		"labels": {
+			"enterName": "Enter with your name",
+			"selectACard": "Select a card"
+		},
+		"buttons": {
+			"confirm": "Enter"
+		}
+	}
+}
