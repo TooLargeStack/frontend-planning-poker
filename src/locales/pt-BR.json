@@ -1,8 +1,9 @@
 {
 	"translation": {
-		"Welcome to React": "Bem Vindo",
+		"greetings": "Bem vindo",
 		"labels": {
-			"enterName": "Informe seu nome"
+			"enterName": "Informe seu nome",
+			"selectACard": "Selecione uma carta"
 		},
 		"buttons": {
 			"confirm": "Confirmar"
