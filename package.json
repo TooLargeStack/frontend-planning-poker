@@ -1,8 +1,8 @@
 {
-  "homepage": "https://{username}.github.io",
+  "homepage": "https://toolargestack.github.io/planning-poker-client/",
   "name": "planning-poker-client",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",
