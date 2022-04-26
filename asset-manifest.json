@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/planning-poker-client/static/js/main.87a53466.js",
+    "main.js": "/planning-poker-client/static/js/main.faa7b540.js",
     "static/js/377.9e378550.chunk.js": "/planning-poker-client/static/js/377.9e378550.chunk.js",
     "index.html": "/planning-poker-client/index.html",
-    "main.87a53466.js.map": "/planning-poker-client/static/js/main.87a53466.js.map",
+    "main.faa7b540.js.map": "/planning-poker-client/static/js/main.faa7b540.js.map",
     "377.9e378550.chunk.js.map": "/planning-poker-client/static/js/377.9e378550.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.87a53466.js"
+    "static/js/main.faa7b540.js"
   ]
 }
