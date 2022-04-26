@@ -3,7 +3,7 @@ import { io } from "socket.io-client"
 const SocketService = {
 	connection: () => null,
 	connect() {
-		this.connection = io(process.env.REACT_APP_API_URI);
+		this.connection = io('http://localhost:5000');
 	},
 
 	onPickCard (value) {
