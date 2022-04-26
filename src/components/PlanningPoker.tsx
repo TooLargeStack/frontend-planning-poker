@@ -5,33 +5,44 @@ import { t } from 'i18next'
 
 import SocketService from '../services/socket/SocketService'
 
-export const PlanningPoker = (props: any) => {
+
+export const PlanningPoker = () => {
 	const USER = localStorage.getItem('username')
-	const [pickedCards, setPickedCards] = React.useState<Array<string>>([])
+	const [pickedCards, setPickedCards] = React.useState<any>({})
 	
 	React.useEffect(() => {
 		SocketService.connect()
 	
-		SocketService.receiveAllCards((values: Array<string>) => {
+		SocketService.receiveAllCards((values: any) => {
 			setPickedCards(values)
 		})
-	
-		SocketService.receiveCard((values: Array<string>) => {
+
+		SocketService.receiveCard((values: any) => {
 			setPickedCards(values)
 		})
 	}, [])
 
 	function handlePickCard(value: string) {
-		let actualPickedCards = pickedCards
-		SocketService.onPickCard(value)
+		let username: any = localStorage.getItem('username')
+		const card: any = {}
+		card[username] = value
 
-		setPickedCards([...actualPickedCards, value])
+		let actualPickedCards = pickedCards
+		SocketService.onPickCard({'username': USER, 'value': value})
+		debugger
+		setPickedCards({...actualPickedCards, ...card})
 	}
 
 	return (
 		<div>
 			<Text mb={7}>{ `${t('greetings')} ${USER}! ${t('labels.selectACard')}:` }</Text>
-			{pickedCards.map((value, index) => <span key={index}>{value}</span>)}
+			<Text mb={7}>
+				{
+					Object.keys(pickedCards).map((username: any, index) =>
+						<p key={index}>{`${username} : ${ pickedCards[username] }`}</p>
+					)
+				}
+			</Text>
 			<FibonacciCardsGroup onPickCard={(value: string) => handlePickCard(value) } />
 		</div>
 	)
