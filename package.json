@@ -1,7 +1,8 @@
 {
+  "homepage": "https://toolargestack.github.io/planning-poker-client/",
   "name": "planning-poker-client",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",
@@ -30,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,6 +52,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.25",
+    "gh-pages": "^3.2.3",
     "socket.io-client": "^3.1.2"
   }
 }
