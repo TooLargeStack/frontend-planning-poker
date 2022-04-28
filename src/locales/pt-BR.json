@@ -3,10 +3,12 @@
 		"greetings": "Bem vindo",
 		"labels": {
 			"enterName": "Informe seu nome",
-			"selectACard": "Selecione uma carta"
+			"selectACard": "Selecione uma carta",
+			"pickedCards": "Cartas selecionadas"
 		},
 		"buttons": {
-			"confirm": "Confirmar"
+			"confirm": "Confirmar",
+			"reset": "Resetar"
 		}
 	}
 }
