@@ -25,7 +25,7 @@ export const FibonacciCardsGroup = (props: any) => {
 				listFibonacci(CARDS_NUMBER).map(function(value: any, index: number) {
 					return (
 						<div onClick={() => props.onPickCard(value)} key={index}>
-							<FibonacciCard as='button' title={value} />
+							<FibonacciCard title={value} />
 						</div>
 					)
 				}) 
