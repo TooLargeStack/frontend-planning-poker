@@ -5,13 +5,9 @@ export const Card = (props: any) => {
 
 	return (
 		<Box
-			w={props.w || 'auto'}
-			px={4}
-			py={5}
 			shadow='md'
 			borderWidth='1px'
-			bg={props.bg}
-			_hover={props._hover}
+			{...props}
 		>
 			<Heading
 				fontSize='xl'
