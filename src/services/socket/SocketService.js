@@ -10,6 +10,10 @@ const SocketService = {
 		this.connection.emit('choose', value)
 	},
 
+	onResetCards() {
+		this.connection.emit('reset', {})
+	},
+
 	receiveCard(callback) {
 		this.connection.on('pickedCard', (value) => callback(value))
 	},

@@ -2,7 +2,7 @@ import * as React from "react"
 import { Outlet } from "react-router-dom";
 import {
   Box,
-  Grid,
+  Stack,
 	Container
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "../ColorModeSwitcher"
@@ -11,12 +11,12 @@ export const Base = () => {
 
 	return (
 		<Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
+      <Stack align="end" justify="end" h="5vh">
         <ColorModeSwitcher justifySelf="flex-end" />
-        <Container maxW="lg">
-					<Outlet />
-				</Container>
-      </Grid>
+      </Stack>
+      <Container w='xl' h="95vh">
+        <Outlet />
+      </Container>
     </Box>
 	)
 }
