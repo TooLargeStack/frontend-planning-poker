@@ -4,12 +4,13 @@ import { Card } from './DefaultCard'
 
 type Props = {
 	title?: string
+	disabled?: boolean
 }
 
 export const FibonacciCard = (props: Props) =>{
 	const HOVER_BG : string = '#BEE3F8'
-	const BG: string = '#63B3ED'
-	const COLOR: string = '#333'
+	const BG: string = props.disabled ? HOVER_BG : '#63B3ED'
+	const COLOR: string = props.disabled ? '#4c4c4c' : '#333' 
 
 
 	return (
@@ -21,10 +22,10 @@ export const FibonacciCard = (props: Props) =>{
 			color={COLOR}
 			width={57}
 			border='2px'
-			borderColor='#333'
+			borderColor={COLOR}
 			_hover={{
 				bg: HOVER_BG,
-				cursor: "pointer"
+				cursor: props.disabled ? 'not-allowed' : "pointer"
 			}}
 			{ ...props }
 		/>

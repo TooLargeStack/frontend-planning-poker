@@ -14,7 +14,7 @@ export const Router = () => {
 		<Routes>
 			<Route path={process.env.PUBLIC_URL} element={<Base />} >
 				{ !!username ? 
-					<Route index element={<PlanningPoker />} />
+					<Route index element={<PlanningPoker resetUser={setUsername} />} />
 					: <Route index element={<PresentationForm onChange={setUsername} />} />
 				}
 			</Route>
