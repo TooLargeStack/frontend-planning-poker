@@ -18,14 +18,21 @@ export const FibonacciCardsGroup = (props: any) => {
 		return result
 	}
 
+	function onCardClick (value: string) {
+		if(props.disabled) return
+
+		props.onPickCard(value)
+		props.setDisabled(true)
+	}
+
 
 	return (
 		<Stack spacing={3} direction='row'>
 			{
 				listFibonacci(CARDS_NUMBER).map(function(value: any, index: number) {
 					return (
-						<div onClick={() => props.onPickCard(value)} key={index}>
-							<FibonacciCard title={value} />
+						<div onClick={() => onCardClick(value)} key={index}>
+							<FibonacciCard title={value} disabled={props.disabled} />
 						</div>
 					)
 				}) 
