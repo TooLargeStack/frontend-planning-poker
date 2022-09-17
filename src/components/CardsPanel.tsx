@@ -16,6 +16,7 @@ type Props = {
 
 export const CardsPanel = (props: Props) => {
     const USER = localStorage.getItem('username')
+    const [disabled, setDisabled] = React.useState<boolean>(false)
 
     function handlePickCard(value: string) {
 		let username: any = localStorage.getItem('username')
@@ -30,6 +31,7 @@ export const CardsPanel = (props: Props) => {
     function handleReset() {
         props.setPickedCards({})
         SocketService.onResetCards()
+        setDisabled(false)
     }
 
     return (
@@ -38,7 +40,11 @@ export const CardsPanel = (props: Props) => {
                 { t('labels.selectACard') }:
             </Text>
             <Box bottom={10}>
-                <FibonacciCardsGroup onPickCard={(value: string) => handlePickCard(value) } />
+                <FibonacciCardsGroup
+                    onPickCard={(value: string) => handlePickCard(value) }
+                    disabled={disabled}
+                    setDisabled={(value: boolean) => setDisabled(value)}
+                />
             </Box>
             <DefaultButton
                 size="md"
