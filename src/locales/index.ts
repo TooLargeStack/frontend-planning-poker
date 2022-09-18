@@ -2,7 +2,7 @@ import en from './en-US.json'
 import br from './pt-BR.json'
 
 const resources = {
-    'en-US': en,
+    'en': en,
     'pt-BR': br
 }
 

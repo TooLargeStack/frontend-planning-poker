@@ -1,0 +1,15 @@
+{
+	"translation": {
+		"greetings": "Welcome",
+		"labels": {
+			"enterName": "Enter with your name",
+			"selectACard": "Select a card",
+			"pickedCards": "Picked cards"
+		},
+		"buttons": {
+			"confirm": "Enter",
+			"reset": "Reset",
+			"changeName": "Change username"
+		}
+	}
+}
